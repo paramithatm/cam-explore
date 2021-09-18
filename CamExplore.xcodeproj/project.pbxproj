@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		C2D4E6A826E911AD0087D7FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D4E6A726E911AD0087D7FB /* AppDelegate.swift */; };
 		C2D4E6AA26E911AD0087D7FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D4E6A926E911AD0087D7FB /* SceneDelegate.swift */; };
-		C2D4E6AC26E911AD0087D7FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D4E6AB26E911AD0087D7FB /* ViewController.swift */; };
-		C2D4E6AF26E911AD0087D7FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D4E6AD26E911AD0087D7FB /* Main.storyboard */; };
+		C2D4E6AC26E911AD0087D7FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D4E6AB26E911AD0087D7FB /* MainViewController.swift */; };
 		C2D4E6B126E911B10087D7FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2D4E6B026E911B10087D7FB /* Assets.xcassets */; };
 		C2D4E6B426E911B10087D7FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2D4E6B226E911B10087D7FB /* LaunchScreen.storyboard */; };
+		C2D4E6BC26E91C430087D7FB /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D4E6BB26E91C430087D7FB /* ImagePickerViewController.swift */; };
+		C2E810ED26F5A7EF008EC5AC /* AVKitCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E810EC26F5A7EF008EC5AC /* AVKitCameraViewController.swift */; };
+		C2E810EF26F5A800008EC5AC /* AVFoundationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E810EE26F5A800008EC5AC /* AVFoundationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C2D4E6A426E911AD0087D7FB /* CamExplore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CamExplore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D4E6A726E911AD0087D7FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2D4E6A926E911AD0087D7FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C2D4E6AB26E911AD0087D7FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C2D4E6AE26E911AD0087D7FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C2D4E6AB26E911AD0087D7FB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		C2D4E6B026E911B10087D7FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2D4E6B326E911B10087D7FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2D4E6B526E911B10087D7FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2D4E6BB26E91C430087D7FB /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
+		C2E810EC26F5A7EF008EC5AC /* AVKitCameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVKitCameraViewController.swift; sourceTree = "<group>"; };
+		C2E810EE26F5A800008EC5AC /* AVFoundationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVFoundationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +62,13 @@
 			children = (
 				C2D4E6A726E911AD0087D7FB /* AppDelegate.swift */,
 				C2D4E6A926E911AD0087D7FB /* SceneDelegate.swift */,
-				C2D4E6AB26E911AD0087D7FB /* ViewController.swift */,
-				C2D4E6AD26E911AD0087D7FB /* Main.storyboard */,
+				C2D4E6AB26E911AD0087D7FB /* MainViewController.swift */,
 				C2D4E6B026E911B10087D7FB /* Assets.xcassets */,
 				C2D4E6B226E911B10087D7FB /* LaunchScreen.storyboard */,
 				C2D4E6B526E911B10087D7FB /* Info.plist */,
+				C2D4E6BB26E91C430087D7FB /* ImagePickerViewController.swift */,
+				C2E810EC26F5A7EF008EC5AC /* AVKitCameraViewController.swift */,
+				C2E810EE26F5A800008EC5AC /* AVFoundationViewController.swift */,
 			);
 			path = CamExplore;
 			sourceTree = "<group>";
@@ -126,7 +132,6 @@
 			files = (
 				C2D4E6B426E911B10087D7FB /* LaunchScreen.storyboard in Resources */,
 				C2D4E6B126E911B10087D7FB /* Assets.xcassets in Resources */,
-				C2D4E6AF26E911AD0087D7FB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +142,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2D4E6AC26E911AD0087D7FB /* ViewController.swift in Sources */,
+				C2E810ED26F5A7EF008EC5AC /* AVKitCameraViewController.swift in Sources */,
+				C2D4E6AC26E911AD0087D7FB /* MainViewController.swift in Sources */,
+				C2E810EF26F5A800008EC5AC /* AVFoundationViewController.swift in Sources */,
 				C2D4E6A826E911AD0087D7FB /* AppDelegate.swift in Sources */,
+				C2D4E6BC26E91C430087D7FB /* ImagePickerViewController.swift in Sources */,
 				C2D4E6AA26E911AD0087D7FB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,14 +154,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C2D4E6AD26E911AD0087D7FB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C2D4E6AE26E911AD0087D7FB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C2D4E6B226E911B10087D7FB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -216,7 +216,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +271,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

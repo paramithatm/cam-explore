@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ImagePickerViewController.swift
 //  CamExplore
 //
 //  Created by Paramitha on 08/09/21.
@@ -7,13 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ImagePickerViewController: UIImagePickerController {
+    
     override func viewDidLoad() {
+        sourceType = .camera
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
-
