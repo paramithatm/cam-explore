@@ -8,7 +8,7 @@
 import UIKit
 
 class MainViewController: UITableViewController {
-    let array: [String] = ["ImagePicker", "AVKit", "AVFoundation"]
+    let array: [String] = ["ImagePicker", "AVFoundation"]
     
     let imageView = UIImageView(frame: CGRect(x: 20, y: 200, width: 375, height: 300))
     
@@ -36,7 +36,11 @@ class MainViewController: UITableViewController {
         let vc: UIViewController
         switch indexPath.row {
         case 0:
-            vc = ImagePickerViewController()
+            let someVc = UIImagePickerController()
+            someVc.sourceType = .camera
+            someVc.mediaTypes = ["public.image"]
+            someVc.delegate = self
+            vc = someVc
             
         default:
             vc = UIViewController()
@@ -47,5 +51,20 @@ class MainViewController: UITableViewController {
     // call this from other vcs
     func setImage(image: UIImage) {
         self.imageView.image = image
+    }
+}
+
+extension MainViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            picker.dismiss(animated: true)
+            return
+        }
+        setImage(image: image)
+        picker.dismiss(animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true)
     }
 }

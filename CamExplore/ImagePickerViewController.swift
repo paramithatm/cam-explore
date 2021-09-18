@@ -8,9 +8,12 @@
 import UIKit
 
 class ImagePickerViewController: UIImagePickerController {
-    
     override func viewDidLoad() {
-        sourceType = .camera
         super.viewDidLoad()
+        delegate = self
+        sourceType = .camera
+        mediaTypes = ["public.image"]
     }
 }
+
+
