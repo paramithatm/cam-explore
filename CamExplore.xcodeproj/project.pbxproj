@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C21C1A6626FB7252001455EC /* AVCameraViewSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21C1A6526FB7252001455EC /* AVCameraViewSetup.swift */; };
 		C2D4E6A826E911AD0087D7FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D4E6A726E911AD0087D7FB /* AppDelegate.swift */; };
 		C2D4E6AA26E911AD0087D7FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D4E6A926E911AD0087D7FB /* SceneDelegate.swift */; };
 		C2D4E6AC26E911AD0087D7FB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D4E6AB26E911AD0087D7FB /* MainViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C21C1A6526FB7252001455EC /* AVCameraViewSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCameraViewSetup.swift; sourceTree = "<group>"; };
 		C2D4E6A426E911AD0087D7FB /* CamExplore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CamExplore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D4E6A726E911AD0087D7FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2D4E6A926E911AD0087D7FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				C2D4E6B226E911B10087D7FB /* LaunchScreen.storyboard */,
 				C2D4E6B526E911B10087D7FB /* Info.plist */,
 				C2E810EE26F5A800008EC5AC /* AVFoundationCameraViewController.swift */,
+				C21C1A6526FB7252001455EC /* AVCameraViewSetup.swift */,
 			);
 			path = CamExplore;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 				C2D4E6AC26E911AD0087D7FB /* MainViewController.swift in Sources */,
 				C2E810EF26F5A800008EC5AC /* AVFoundationCameraViewController.swift in Sources */,
 				C2D4E6A826E911AD0087D7FB /* AppDelegate.swift in Sources */,
+				C21C1A6626FB7252001455EC /* AVCameraViewSetup.swift in Sources */,
 				C2D4E6AA26E911AD0087D7FB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

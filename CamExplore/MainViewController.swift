@@ -41,7 +41,8 @@ class MainViewController: UITableViewController {
             someVc.mediaTypes = ["public.image"]
             someVc.delegate = self
             vc = someVc
-            
+        case 1:
+            vc = AVFoundationCameraViewController()
         default:
             vc = UIViewController()
         }
