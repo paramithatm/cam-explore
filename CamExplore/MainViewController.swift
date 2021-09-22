@@ -36,13 +36,17 @@ class MainViewController: UITableViewController {
         let vc: UIViewController
         switch indexPath.row {
         case 0:
-            let someVc = UIImagePickerController()
-            someVc.sourceType = .camera
-            someVc.mediaTypes = ["public.image"]
-            someVc.delegate = self
+            let someVc: UIImagePickerController = {
+                let some = UIImagePickerController()
+                some.sourceType = .camera
+                some.mediaTypes = ["public.image"]
+                some.delegate = self
+                return some
+            }()
             vc = someVc
         case 1:
             vc = AVFoundationCameraViewController()
+            vc.modalPresentationStyle = .fullScreen
         default:
             vc = UIViewController()
         }
