@@ -9,7 +9,6 @@ import UIKit
 
 extension AVFoundationCameraViewController {
     
-    
     func setupView(){
        view.backgroundColor = .black
        view.addSubview(switchCameraButton)
@@ -39,11 +38,7 @@ extension AVFoundationCameraViewController {
     }
     
     @objc func captureImage(_ sender: UIButton?){
-        
-    }
-    
-    @objc func switchCamera(_ sender: UIButton?){
-        
+        capturePhoto()
     }
     
     @objc func dismissVc(_ sender: UIButton?) {

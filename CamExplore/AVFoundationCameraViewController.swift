@@ -10,13 +10,14 @@ import UIKit
 
 class AVFoundationCameraViewController: UIViewController {
     
+    var previewLayer : AVCaptureVideoPreviewLayer!
     var captureSession: AVCaptureSession!
     
-    var backCamera: AVCaptureDevice!
-    var frontCamera: AVCaptureDevice!
+    var camera: AVCaptureDevice!
     
-    var backInput: AVCaptureInput!
-    var frontInput: AVCaptureInput!
+    var input: AVCaptureInput!
+    
+    var photoOutput: AVCapturePhotoOutput!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,6 +63,11 @@ class AVFoundationCameraViewController: UIViewController {
             self.captureSession.automaticallyConfiguresCaptureDeviceForWideColor = true
             
             self.setupInput()
+            self.setupOutput()
+            
+            DispatchQueue.main.async {
+                self.setupPreview()
+            }
             
             self.captureSession.commitConfiguration()
             
@@ -71,35 +77,42 @@ class AVFoundationCameraViewController: UIViewController {
     
     func setupInput() {
         if let device = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInWideAngleCamera, for: AVMediaType.video, position: .back) {
-            backCamera = device
+            camera = device
         } else {
             fatalError("no back camera")
         }
         
-        if let device = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInWideAngleCamera, for: AVMediaType.video, position: .front) {
-            frontCamera = device
-        } else {
-            fatalError("no front camera")
-        }
-        
-        guard let bcInput = try? AVCaptureDeviceInput(device: backCamera) else {
+        guard let bcInput = try? AVCaptureDeviceInput(device: camera) else {
             fatalError("cannot create input from back camera")
         }
-        backInput = bcInput
+        input = bcInput
         
-        guard let frInput = try? AVCaptureDeviceInput(device: frontCamera) else {
-            fatalError("cannot create input from front camera")
-        }
-        frontInput = frInput
-        
-        guard captureSession.canAddInput(backInput), captureSession.canAddInput(frontInput) else {
+        guard captureSession.canAddInput(input) else {
             fatalError("could not add input to session")
         }
         
-        captureSession.addInput(backInput)
+        captureSession.addInput(input)
     }
     
-    //MARK:- View Setup
+    func setupPreview() {
+        previewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
+        view.layer.insertSublayer(previewLayer, below: captureImageButton.layer)
+        previewLayer.frame = self.view.layer.frame
+    }
+    
+    func setupOutput() {
+        photoOutput = AVCapturePhotoOutput()
+        guard captureSession.canAddOutput(photoOutput) else {
+            fatalError("could not add output to session")
+        }
+        captureSession.addOutput(photoOutput)
+    }
+    
+    func capturePhoto() {
+        photoOutput.capturePhoto(with: AVCapturePhotoSettings(), delegate: self)
+    }
+    
+    // MARK: - View Setup
     let switchCameraButton : UIButton = {
         let button = UIButton()
         button.backgroundColor = .systemGreen
@@ -124,4 +137,22 @@ class AVFoundationCameraViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    var delegate: AVCameraVCDelegate? = nil
+}
+
+extension AVFoundationCameraViewController: AVCapturePhotoCaptureDelegate {
+    func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+        guard let photoData = photo.fileDataRepresentation(),
+              let image = UIImage(data: photoData)
+        else { return }
+        
+        dismiss(animated: true, completion: {
+            self.delegate?.putImage(image: image)
+        })
+    }
+}
+
+protocol AVCameraVCDelegate {
+    func putImage(image: UIImage)
 }

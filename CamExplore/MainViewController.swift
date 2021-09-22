@@ -45,8 +45,10 @@ class MainViewController: UITableViewController {
             }()
             vc = someVc
         case 1:
-            vc = AVFoundationCameraViewController()
-            vc.modalPresentationStyle = .fullScreen
+            let someVc = AVFoundationCameraViewController()
+            someVc.delegate = self
+            someVc.modalPresentationStyle = .fullScreen
+            vc = someVc
         default:
             vc = UIViewController()
         }
@@ -59,7 +61,13 @@ class MainViewController: UITableViewController {
     }
 }
 
-extension MainViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+
+extension MainViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCameraVCDelegate {
+    func putImage(image: UIImage) {
+        setImage(image: image)
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
             picker.dismiss(animated: true)
