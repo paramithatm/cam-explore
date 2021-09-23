@@ -82,10 +82,10 @@ class AVFoundationCameraViewController: UIViewController {
             fatalError("no back camera")
         }
         
-        guard let bcInput = try? AVCaptureDeviceInput(device: camera) else {
+        guard let deviceInput = try? AVCaptureDeviceInput(device: camera) else {
             fatalError("cannot create input from back camera")
         }
-        input = bcInput
+        input = deviceInput
         
         guard captureSession.canAddInput(input) else {
             fatalError("could not add input to session")
