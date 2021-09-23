@@ -31,7 +31,7 @@ extension AVFoundationCameraViewController {
     }
     
     @objc func captureImage(_ sender: UIButton?){
-        
+        capturePhoto()
     }
     
     @objc func dismissVc(_ sender: UIButton?) {

@@ -19,15 +19,11 @@ class AVFoundationCameraViewController: UIViewController {
         super.viewDidAppear(animated)
     }
     
+    func capturePhoto() {
+        
+    }
+    
     // MARK: - View Setup
-    let switchCameraButton : UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .systemGreen
-        button.tintColor = .white
-        button.layer.cornerRadius = 25
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
     let captureImageButton : UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
